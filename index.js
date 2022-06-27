@@ -6,6 +6,7 @@
 //TAMBAH DATA MANUAL
 const tambah = document.querySelector('#addTable')
 const wadah = document.querySelector('#bodyTable')
+const hapusData = document.querySelector('#delete')
 
 tambah.addEventListener('click',() => {
     wadah.innerHTML += `
@@ -20,24 +21,29 @@ tambah.addEventListener('click',() => {
     `
 })
 
-//TAMPILKAN DATA DARI DATA JSON
-// masih error
-import dataJson from 'data.json'
-
-console.log(dataJson)
-let dataIdentitas = dataJson['table']
-let listData = '';
-dataIdentitas.foreach(function (data) {
-    listData += `
-    <tr>
-        <th scope="row">1</th>
-        <td>${data.name}</td>
-        <td>${data.daerah}</td>
-        <td>
-            <button type="button" class="btn btn-danger">Danger</button>
-        </td>
-    </tr>
-    `
+hapusData.addEventListener('click', ()=> {
+    //hapus data
+    wadah.innerHTML = "";
 })
 
-wadah.innerHTML = listData
+
+//TAMPILKAN DATA DARI DATA JSON
+
+let data = [];
+
+// let dataIdentitas = dataJson['table']
+// let listData = '';
+// dataIdentitas.foreach(function (data) {
+//     listData += `
+//     <tr>
+//         <th scope="row">1</th>
+//         <td>${data.name}</td>
+//         <td>${data.daerah}</td>
+//         <td>
+//             <button type="button" class="btn btn-danger">Hapus</button>
+//         </td>
+//     </tr>
+//     `
+// })
+
+// wadah.innerHTML = listData
